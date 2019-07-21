@@ -25,7 +25,7 @@ SECRET_KEY = 'uiyd)b!!29h&pw^v+=+xg#rkq=+vw^6(0aae#!jcduopijz4q!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['mammadovs.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
