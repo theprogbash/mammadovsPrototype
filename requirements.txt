@@ -1,4 +1,5 @@
 certifi==2019.6.16
+django-social-share==1.3.2
 django-tinymce==2.8.0
 gunicorn==19.9.0
 pipenv==2018.11.26
