@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div id="main-content" class="edgße-padding">
+	<section class="page-section about-page">
+		<div class="container">
+		
+			<div class="row">
+		
+				<!-- Left side page column -->
+				<div class="col-xlarge-8 col-medium-8">
+					<h1 class="font-reg">Haqqımda</h1>
+					<div class="page-content">
+						<p id="about-text">
+							Mən Kamranam. Soyadım hər halda saytın domain adından və loqotipindən bəllidir. Nə az, nə çox, düz 22 ildir yaşadığımı zənn edirəm. <br>
+							Bura isə mənim məqaləxanamdır. Əsasən üç kateqoriyada - <a href="/kateqoriya/texnologiya">texnologiya</a>, <a href="/kateqoriya/elm">elm</a> və <a href="/kateqoriya/bloq">şəxsi</a> maraqlarımı, təcrübələrimi, qiymətləndirmələrimi və s. bölüşəcəyim məqalələr yazıram(yazacağam).
+							Timeline-a gəldikdə, proqramlaşdırma müəllimi kimi fəaliyyət göstərirəm. Bu qədər kifayət edər, daha ətraflı məlumat üçün səhifənin sağ aşağı küncündəki LinkedIn ikonuna klikləyib hesabıma keçid edə bilərsiniz. <br>
+							Şəxsən əlaqə saxlamaq istədiyiniz halda isə <a href="/elaqe">buraya</a> klik edib, səhifədəki şərtləri oxuyub, mövcud blankı doldurub mail göndərə bilərsiniz. <br>
+							Hə, bir də informasiya tərəfinizdən doğru, obyektiv və faydalı kimi dəyərləndirildiyi təqdirdə ona maraq duya biləcək <strong>bütün</strong> kütləni nəzərə alınaraq ən aydın şəkildə paylaşılmalıdır.
+						</p>
+						<blockquote><code id="quote-text"></code></blockquote>
+					</div>
+				</div>
+		
+				<!-- Right side page column -->
+				<div class="col-xlarge-4 col-medium-4">
+					{% load staticfiles %}
+					<div class="contact-image">
+						<img src="{% static 'img/kamran.jpg' %}" alt="about image" class="image" />
+					</div>
+				</div>
+					
+			</div>
+
+		</div>
+	</section>
+
+<!--	<section class="services-section page-section section-border">-->
+<!--		<div class="container">-->
+<!--			-->
+<!--			<div class="row">-->
+<!--				&lt;!&ndash; Service item example &ndash;&gt;-->
+<!--				<div class="col-xlarge-4 col-medium-4">-->
+<!--					<div class="service-item">-->
+<!--						<i class="fab fa-html5" style="font-size:30px;margin-bottom:20px;"></i>-->
+<!--						<h3 class="font-reg">HTML5</h3>-->
+<!--						<p>Duis iaculis tellus vitae ante consequat. Maecenas ut molestie est. Sed vitae tincidunt elit.</p>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				-->
+<!--				&lt;!&ndash; Service item example &ndash;&gt;-->
+<!--				<div class="col-xlarge-4 col-medium-4">-->
+<!--					<div class="service-item">-->
+<!--						<i class="fab fa-css3-alt" style="font-size:30px;margin-bottom:20px;"></i>-->
+<!--						<h3 class="font-reg">CSS3</h3>-->
+<!--						<p>Duis iaculis tellus vitae ante consequat. Maecenas ut molestie est. Sed vitae tincidunt elit.</p>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				-->
+<!--				&lt;!&ndash; Service item example &ndash;&gt;-->
+<!--				<div class="col-xlarge-4 col-medium-4">-->
+<!--					<div class="service-item">-->
+<!--						<i class="fab fa-js" style="font-size:30px;margin-bottom:20px;"></i>-->
+<!--						<h3 class="font-reg">JavaScript</h3>-->
+<!--						<p>Duis iaculis tellus vitae ante consequat. Maecenas ut molestie est. Sed vitae tincidunt elit.</p>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				-->
+<!--				-->
+<!--				&lt;!&ndash; Service item example &ndash;&gt;-->
+<!--				<div class="col-xlarge-4 col-medium-4">-->
+<!--					<div class="service-item">-->
+<!--						<i class="fab fa-python" style="font-size:30px;margin-bottom:20px;"></i>-->
+<!--						<h3 class="font-reg">Python</h3>-->
+<!--						<p>Duis iaculis tellus vitae ante consequat. Maecenas ut molestie est. Sed vitae tincidunt elit.</p>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				-->
+<!--				&lt;!&ndash; Service item example &ndash;&gt;-->
+<!--				<div class="col-xlarge-4 col-medium-4">-->
+<!--					<div class="service-item">-->
+<!--						<i class="fas fa-code" style="font-size:30px;margin-bottom:20px;"></i>-->
+<!--						<h3 class="font-reg">C#</h3>-->
+<!--						<p>Duis iaculis tellus vitae ante consequat. Maecenas ut molestie est. Sed vitae tincidunt elit.</p>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				-->
+<!--				&lt;!&ndash; Service item example &ndash;&gt;-->
+<!--				<div class="col-xlarge-4 col-medium-4">-->
+<!--					<div class="service-item">-->
+<!--						<i class="fas fa-database" style="font-size:30px;margin-bottom:20px;"></i>-->
+<!--						<h3 class="font-reg">SQL</h3>-->
+<!--						<p>Duis iaculis tellus vitae ante consequat. Maecenas ut molestie est. Sed vitae tincidunt elit.</p>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			-->
+<!--			</div>-->
+<!--		-->
+<!--		</div>-->
+<!--	</section>-->
+</div>
+
+<script>
+var i = 0;
+var txt = '<quote>Proqramçı olmaq üçün əvvəl oturmağı öyrənmək lazımdır.</quote>';
+var speed = 100;
+
+(function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("quote-text").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+})();
+
+</script>
+
+{% endblock %}

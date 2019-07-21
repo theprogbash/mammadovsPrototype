@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+
+<title>Mammadovs - Blog</title>
+
+{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/structure.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}" />
+	<link  rel="stylesheet" href="{% static 'js/lib/owl-carousel/owl.carousel.css'%}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<meta name="author" content="Kamran Mammadov">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta charset="UTF-8">
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header>
+	<div class="header-main clearfix edge-padding header-narrow">
+		<div class="header-main-inside">
+			<div class="container clearfix">
+				<div class="medium-header-container">
+					<a href="/" id="site-logo">c:\mammadovs<span class="underline">_</span></a>
+					<!-- Mobile burger icon -->
+					<div id="mobile-nav-button">
+						<div id="mobile-nav-icon">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</div>
+				</div>
+
+				<nav id="header-nav">
+					<ul id="nav-ul" class="menu font-reg clearfix">
+						<li class="menu-item menu-item-has-children">
+							<a href="/">Məqalələr<span class="sub-drop-icon fa fa-angle-down"></span></a>
+							<ul class="sub-menu sub-menu-first">
+								{% for category in category_list %}
+								<li><a href="/kateqoriya/{{ category.name }}">{{ category.name }}</a></li>
+								{% endfor %}
+							</ul>
+						</li>
+						<li class="menu-item menu-item-has-children">
+							<a href="/haqqimda">Haqqımda</a>
+						</li>
+						<li class="menu-item menu-item-has-children">
+							<a href="/elaqe">Əlaqə</a>
+						</li>
+					</ul>
+				</nav>
+
+			</div>
+		</div>
+	</div>
+</header>
+
+<div id="main-content" class="edge-padding">
+{% block content %}
+{% endblock %}
+</div>
+
+<footer>
+	<div class="footer-main edge-padding">
+		<div class="footer-main-inside">
+			<div class="container clearfix">
+				<div class="footer-bottom clearfix">
+					<p class="font-reg">© 2019 - ArtGarage.</p>
+					<ul class="footer-social">
+<!--						<li><a href="tel:+994554371570"><i class="fa fa-phone"></i></a></li>-->
+<!--						<li><a href="mailto: kamranmzam@code.edu.az" target="_blank"><i class="fa fa-envelope"></i></a></li>-->
+						<li><a href="https://www.linkedin.com/in/kamran-mammadov-aa0383178/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+					</ul>
+					<div id="scroll-top">
+						<span class="fa fa-angle-up"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

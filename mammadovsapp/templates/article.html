@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="blog-section page-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xlarge-1"></div>
+            <div class="col-xlarge-10">
+                <ul class="blog-list">
+                    <li>
+                        <div class="blog-item wide-blog-item">
+                            <a href="/"><img src="/{{ article.image }}" class="image"/></a>
+                            <h3 class="font-reg"><a href="">{{ article.title }}</a></h3>
+                            <div class="blog-item-meta">
+                                <span>{{ article.post_date }}</span>
+                            </div>
+                            <div class="blog-item-meta">
+                                <span style="text-transform: capitalize;">{{ article.category }}</span>
+                            </div>
+                            <div class="page-content">
+                                <p class="article-content">{{ article.content|safe }}</p>
+                            </div>
+                            <div class="social-share">
+                                {% load social_share %}
+                                <i class="fab fa-facebook-square"></i>{% post_to_facebook  object_or_url "Facebook-da paylaş" %}
+                                <i class="fab fa-twitter-square"></i>{% post_to_twitter 'Kamran "{{article.title}}" başlıqlı yeni məqalə yazıb!' object_or_url "Twitter-də paylaş" %}
+                                <i class="fab fa-linkedin-square"></i>{% post_to_linkedin article.title object_or_url "LinkedIn-də paylaş" %}
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <section class="post-navigation">
+                    <div id="post-nav-main" class="clearfix">
+                        <a href="" id="post-nav-prev" class="post-nav-item">
+                            <p class="font-reg"><i class="fas fa-long-arrow-alt-left"></i>Əvvəlki Məqalə</p>
+                        </a>
+                        <a href="" id="post-nav-next" class="post-nav-item">
+                            <p class="font-reg">Sonrakı Məqalə<i class="fas fa-long-arrow-alt-right"></i></p>
+                        </a>
+                    </div>
+                </section>
+            </div>
+            <div class="col-xlarge-1"></div>
+        </div>
+    </div>
+</section>
+{% endblock %}

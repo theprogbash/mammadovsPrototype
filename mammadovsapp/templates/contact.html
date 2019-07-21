@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id="main-content" class="page-section">
+	<section class="contact-page">
+		<div class="container">
+			<div class="row contact-page-text">
+				<div class="col-xlarge-5 col-medium-6">
+					<h1 class="font-reg">Əlaqə</h1>
+					<div class="page-content">
+						<p>Aşağıda gördüyünüz boşluqlara uyğun olaraq adınızı, elektron poçt ünvanınızı (əks-əlaqə üçün hər birini doğru qeyd etməniz şərtdir) və mesajınızı (bu mesaj web development-in istənilən bir topici barədə yardım, və ya sahəyə necə, hansı texnologiyaları öyrənməklə başlama, karyerada necə yüksəlmək barədə məsləhət alma, iş təklifi və uyğun bir proyektdə iştiraka dəvət etmə məqsədli ola bilər) qeyd edərək mənimlə şəxsən əlaqə saxlaya bilərsiniz. Sosial hesab linklərim isə 'footer'(səhifənin ən aşağı hissəsi) bölməsində yer almışdır. </p>
+					</div>
+				</div>
+				<div class="col-xlarge-7 col-medium-6">
+					{% load staticfiles %}
+					<div class="contact-image">
+						<img src="{% static 'img/mail.jpg' %}" alt="contact image" class="image" />
+					</div>
+				</div>
+			</div>
+			<div id="success-message" class="notification"><p class="font-reg"></p></div>
+			<div id="error-message" class="notification"><p class="font-reg"></p></div>
+			<form id="contact-form" method="post" name="contact-form">
+				<div class="row">
+					<div class="col-xlarge-6 col-medium-6">
+<!--						<input type="text" class="contact-input font-reg" name="name" id="contact_name" placeholder="Your Name" tabindex="1" />-->
+						{{ form.name }}
+					</div>
+					<div class="col-xlarge-6 col-medium-6">
+<!--						<input type="email" class="contact-input font-reg" name="email" id="contact_email" placeholder="Your Email" tabindex="2" />-->
+						{{ form.email }}
+					</div>
+				</div>
+				<div class="row">	
+					<div class="col-xlarge-12">
+<!--						<textarea name="message" id="contact_message" class="contact-text font-reg" tabindex="4" placeholder="Your Message" ></textarea>-->
+						{{ form.message }}
+					</div>
+				</div>
+				{% csrf_token %}
+				<input type="submit" class="primary-button font-reg hov-bk" value="Göndər" />
+			</form>
+		</div>
+	</section>
+</div>
+{% endblock %}

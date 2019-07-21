@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="blog-section page-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xlarge-1"></div>
+            <div class="col-xlarge-10">
+                <ul class="blog-list">
+                    <li>
+                        <div class="blog-item wide-blog-item">
+                            {% load staticfiles %}
+                            <a href="/"><img src="{% static 'img/404.png' %}" class="image"/></a>
+                            <h1 class="font-reg">BELƏ SƏHİFƏ TAPILMADI :(</h1>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xlarge-1"></div>
+        </div>
+    </div>
+</section>
+{% endblock %}
