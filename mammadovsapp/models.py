@@ -4,7 +4,7 @@ from tinymce.models import HTMLField
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=50)
     slug = models.SlugField(unique=True, null=True, editable=False)
 
     def __str__(self):
@@ -16,8 +16,8 @@ class Category(models.Model):
 
 
 class Article(models.Model):
-    title = models.CharField(max_length=30)
-    description = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
+    description = models.CharField(max_length=200)
     content = HTMLField()
     # image_url = models.CharField(max_length=2000)
     image = models.ImageField(upload_to='static/img')
