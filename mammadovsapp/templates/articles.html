@@ -9,7 +9,7 @@
                     {% for article in articles %}
                     <li>
                         <div class="blog-item wide-blog-item">
-                            <a href="/kateqoriya/{{ article.category }}/{{ article.slug }}"><img src="/{{ article.image }}" alt=""
+                            <a href="/kateqoriya/{{ article.category }}/{{ article.slug }}"><img src="{{ article.image }}" alt=""
                                                               class="image"/></a>
                             <h3 class="font-reg"><a href="">{{ article.title }}</a></h3>
                             <div class="blog-item-meta">
