@@ -18,7 +18,6 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from mammadovsproject import settings
 from django.conf.urls import handler404, handler500
-from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
