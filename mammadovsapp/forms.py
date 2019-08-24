@@ -19,3 +19,5 @@ class ContactForm(forms.Form):
         self.fields['message'].widget.attrs['placeholder'] = 'Mesajınız'
         self.fields['message'].widget.attrs['tabindex'] = "4"
 
+
+

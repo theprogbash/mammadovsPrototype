@@ -15,12 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
+from mammadovsproject import settings
 from django.conf.urls import handler404, handler500
+from django.contrib.staticfiles.urls import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('addmin/', admin.site.urls),
     path('', include('mammadovsapp.urls')),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 
 handler404 = 'mammadovsapp.views.error_404_view'
 handler500 = 'mammadovsapp.views.error_500_view'

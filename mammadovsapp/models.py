@@ -19,8 +19,8 @@ class Article(models.Model):
     title = models.CharField(max_length=100)
     description = models.CharField(max_length=200)
     content = HTMLField()
-    image = models.CharField(max_length=2000)
-    # image = models.ImageField(upload_to='static/img')
+    # image = models.CharField(max_length=2000)
+    image = models.ImageField(upload_to='media')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
     post_date = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(unique=True, null=True, editable=False)
@@ -35,6 +35,7 @@ class Article(models.Model):
 
 def latin_slugify(str):
     str = str.replace(" ", "-")
+    str = str.replace("?", "-")
     str = str.replace(",", "-")
     str = str.replace("ə", "e")
     str = str.replace("ö", "o")
@@ -43,6 +44,10 @@ def latin_slugify(str):
     str = str.replace("ı", "i")
     str = str.replace("ü", "u")
     str = str.replace("ğ", "gh")
+    str = str.replace("İ", "i")
+    str = str.replace("Ə", "e")
+    str = str.replace("Ö", "o")
+    str = str.replace("Ü", "u")
     return str.lower()
 
 
